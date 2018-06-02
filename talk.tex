@@ -1,6 +1,7 @@
-\documentclass[draft]{beamer}
-%\documentclass{beamer}
-
+%\documentclass[draft]{beamer}
+\documentclass{beamer}
+\usetheme{Warsaw}
+\usecolortheme{wolverine}
 \usepackage{graphicx}
 \title[Prime Numbers]{Prime Numbers and the Riemann Hypothesis}
 \subtitle{(Writing a book with Barry Mazur)}
@@ -33,41 +34,41 @@
 \end{frame}
 
 \begin{frame}{Here's the book...}
-  \includegraphics[width=.98\textwidth]{pics/the-book.png}
+  \begin{center}
+    \includegraphics[height=.82\textheight]{pics/the-book.png}
+  \end{center}
 \end{frame}
 
-\section{2005: CMI Public Lecture}
+\section{Give a Public Lecture}
 
 \begin{frame}{Clay Math Institute public lecture (MIT, May 3, 2005)}
 
   \href{http://www.claymath.org/library/public\_lectures/mazur\_riemann\_hypothesis.pdf}{\bf Are there still unsolved problems about the numbers 1, 2, 3, 4, ... ?}
   \vfill
 
-  \begin{itemize}
-    \item  Talk for a really general public audience (high school...)
-    \item  Choose a problem to ``sell'' number theory to the general public:
-          \begin{itemize}
-            \item   Immediately accessible
-            \item   Immediately interesting
-            \item   Primes and how eratic they are
-            \item   Cicada's every 13, 17 years...
-            \item   Lots of examples that are "opening, interesting questions/issues."
-            \item   People can immediately make computations of their \underline{own}
-            \item   Barry Mazur got his father who had done NO
-                  math hooked on Goldbach Conjecture, so thought
-                  primes would work.
-          \end{itemize}
-  \end{itemize}
+  \begin{block}{``Sell'' number theory to the general public}
+    \begin{itemize}
+      \item   Immediately accessible
+      \item   Immediately interesting
+      \item   Primes and how eratic they are
+      \item   Cicada's every 13, 17 years...
+      \item   Lots of examples that are ``opening, interesting questions/issues.''
+      \item   People can immediately make computations of their \underline{own}
+      \item   Barry Mazur got his father who had done NO
+            math hooked on Goldbach Conjecture, so thought
+            primes would work.
+    \end{itemize}
+  \end{block}
 \end{frame}
 
 \begin{frame}{SageMath}
   \vfill
   \begin{center}
-    \includegraphics[width=.5\textwidth]{pics/sage-logo.png}
+    \includegraphics[width=.7\textwidth]{pics/sage-logo.png}
   \end{center}
   \vfill
 
-  I launched Sage a few months before this CMI public lecture.
+  I launched Sage a few months before this 2005 CMI public lecture.
   \begin{itemize}
     \item Sage is a free open source alternative to Mathematica, Maple, Magma, and Matlab.
     \item Early Sage development was motivated by this talk
@@ -78,73 +79,117 @@
   \end{itemize}
 \end{frame}
 
+
 \begin{frame}{The Prime Counting Problem}
-  Let $\pi(x)$ be the number of primes $\leq x$.
-  Problem: give a ``good approximation'' for $\pi(x)$
+  Let $\pi(x)$ be the number of primes $\leq x$.\\
+  Problem: give a ``good approximation'' for $\pi(x)$.
+  \vfill
+
+  \includegraphics[width=.98\textwidth]{pics/prime-pi-100.png}
 
 \end{frame}
 
-\section{2006: Let's write a book!}
+\begin{frame}{The Prime Counting Problem}
+  Let $\pi(x)$ be the number of primes $\leq x$.\\
+  \textbf{The Problem:} give a ``good approximation'' for $\pi(x)$.
+  \vfill
+
+  \includegraphics[width=.98\textwidth]{pics/prime-pi-1000.png}
+
+\end{frame}
+
+\begin{frame}{The Prime Counting Problem}
+  Let $\pi(x)$ be the number of primes $\leq x$.\\
+  Problem: give a ``good approximation'' for $\pi(x)$.
+  \vfill
+
+  \includegraphics[width=.98\textwidth]{pics/prime-pi-1000000.png}
+
+\end{frame}
+
+\begin{frame}{Answer: RH}
+  The answer, of course, is \textbf{the Riemann Hypothesis}, which is
+  a major open problem in mathematics.
+\end{frame}
+
+
+\section{Write a Book}
 
 \begin{frame}{What kind of book?}
   \begin{itemize}
     \item   Book motivated by the prime counting problem (connect with other project -- explicit formula projects...).
-    \item Mostly math and no "stories of people", since many other books do that already.
-    \item  Similar to guessing rank of MW of elliptic curve from $a_p$.
-    \item Bullshit
-    \item T.\thinspace{}C. MITS
+    \item Mostly math and no ``stories of people'', since many other books on RH do that already.
+    \item Similar problem to guessing rank of an elliptic curve from $a_p$, which we had been thinking about.
   \end{itemize}
-
 \end{frame}
+
+\begin{frame}{What Sort of Book?  Big? Small?}
+  \begin{center}
+    Like T.\thinspace{}C. MITS or like ON BULLSHIT?
+    \vspace{1ex}
+
+    \includegraphics[height=.75\textheight]{pics/tc-mits.png}
+    \hspace{2em}
+    \includegraphics[height=.75\textheight]{pics/bullshit.png}
+  \end{center}
+\end{frame}
+
 
 \begin{frame}{Our Approach}
   \begin{itemize}
-    \item Do not emphasize people/history/stories, since that's done already in many other books.
-    \item   Go back 150+ years and explain what RH is more from the point of view of real Fourier analysis and distributions.
+    \item Do not emphasize people/history/stories, since that's done already in many other books on RH.
+    \item   Go back 150+ years and explain what RH is more from the point of view of real classical Fourier analysis.
           \begin{itemize}
-            \item make big deal of the fact that we take mid-19th century real perspective
-            \item leaving complex number to the very, very end.
+            \item We embraced this mid-19th century real perspective.
+            \item We left complex number to the very, very end.
           \end{itemize}
   \end{itemize}
 \end{frame}
+
+
+\begin{frame}{Target Audience?}
+
+  Who are we writing this book for? Those who want to read about mathematics (not people and history).
+
+  \begin{itemize}
+    \item \textbf{High School students?} Tested at \href{https://wstein.org/edu/2007/simuw07/}{SIMUW 2007}.
+    \item \textbf{Retired electrical engineers?}  Tested with original MIT talk, and  online materials we shared.
+  \end{itemize}
+
+
+\end{frame}
+
 
 \begin{frame}{SageMath again}
   Used Sage to compute with prime numbers, zeros, etc., and generally to plot everything in the book.
   \begin{itemize}
-    \item drawing tons of plots
-    \item started book at same time as sage...
-    \item plots absolutely essential to exposition
-    \item surprising that you see the spikes with such little computation.
-    \item take fourier transform of discrete distribution at primes, you get discrete distribution of zeros
-    \item do the reverse get the discrete distribution of prime powers.
-    \item without much power... that is striking:
-    \item that is what got us thinking about "how explicit is the explicit formula if you compute".
+    \item We drew tons of plots to illustrate everything.
+    \item The plots are absolutely essential to the exposition, and in fact really drove it!
+    \item It is surprising that you see the spikes with such little computation.
+    \item Central observations:
+          \begin{itemize}
+            \item Fourier transform of discrete distribution at primes, gives discrete distribution of zeros of $\zeta$.
+            \item The reverse gets the discrete distribution of prime powers.
+          \end{itemize}
+    \item This what got us thinking about ``how explicit is the explicit formula if you compute?''
   \end{itemize}
 \end{frame}
 
-\begin{frame}{SIMUW 2007: Test on High School Students}
 
-  \url{https://wstein.org/edu/2007/simuw07/}
-\end{frame}
-
-
-\section{2013: Let's keep writing a book!}
-
-
-\begin{frame}{Collaborative LaTeX via CoCalc}
+\begin{frame}{Collaborative \LaTeX{} via CoCalc}
   \begin{itemize}
-    \item Using CoCalc's latex editor.
+    \item Using CoCalc's \LaTeX{} editor.
           \begin{itemize}
-            \item web browser...
-            \item gives a sense of the collaborative spirit
+            \item Web browser...
+            \item Gives a sense of the collaborative spirit
           \end{itemize}
-    \item We put our PDF on the web at every stage.
+    \item We put our rough PDF on the web at every stage.
     \item GitHub versions: \url{https://github.com/williamstein/rh}
   \end{itemize}
 \end{frame}
 
 
-\section{2014: Let's publish}
+\section{Publish a Book}
 
 \begin{frame}{How to Publish the book:  Self publish!?}
   \begin{itemize}
@@ -158,20 +203,23 @@
 
 \begin{frame}{Finding a commercial publisher}
   \begin{itemize}
-    \item   Finding a publisher
-    \item what expected to give is latex, and expect.
+    \item Finding a publisher
+    \item What expected to give is \LaTeX{}...
   \end{itemize}
 \end{frame}
 
 
 \begin{frame}{Typos and Mistakes}
   \begin{itemize}
-    \item Dozens of people "on the internet" carefully read drafts of
+    \item Dozens of people ``on the Internet'' carefully read drafts of
           the book and provided incredibly useful feedback.  \textbf{THANKS!}
     \item The publisher also had a copy editor read the book,
           and provided very different feedback.
     \item Advice: never expect your publisher to catch the sort of
-          mistakes somebody who cares about mathematics catches.
+          mistakes a mathematician catches:
+          \begin{center}
+            \includegraphics[height=.45\textheight]{pics/gauss.png}
+          \end{center}
   \end{itemize}
 \end{frame}
 
@@ -179,8 +227,8 @@
 \begin{frame}{Production}
 
   \begin{itemize}
-    \item cambridge might have made some positive steps toward latex
-    \item net very positive overall experience.
+    \item Cambridge Univ Press might have made some positive steps toward \LaTeX{} (mention Ogus).
+    \item Working with CUP has been a very positive experience overall.
   \end{itemize}
 
 \end{frame}
@@ -199,7 +247,7 @@
 
   \vfill
 
-  The negative reviews were due to \textit{production issues}, both with the physical book
+  Negative reviews  due to \textit{production issues}, both with the physical book
   and the Kindle edition....
 
 \end{frame}
@@ -207,20 +255,19 @@
 \begin{frame}{Reception by Readers}
   \begin{itemize}
     \item Feedback
-    \item summarize reviews on amazon
-    \item sarnak review in bulletins
-    \item other reviews
-    \item prizes
+    \item Sarnak's review in Bulletins
+    \item Other reviews
+    \item Prizes
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Royalties}
 
-  We sold a few copies, so Cambridge University Press sent us checks.
+  We sold some copies, so Cambridge University Press sent us some money.
   I bought a puppy (Bella!):
 
   \begin{center}
-    \includegraphics[width=.8\textwidth]{pics/bella-puppy.png}
+    \includegraphics[height=.7\textheight]{pics/bella-puppy.png}
   \end{center}
 
 
@@ -239,15 +286,12 @@ concluding an agreement with Nippon Hyoron Sha for
 a Japanese language edition of your book. They plan
 to print an edition of 2,500 copies initially, which
 will be sold at approximately 2,200 JPY per copy.
+  \end{verbatim}
 
-Here is an overview of the terms we have negotiated
-...
-\end{verbatim}
-
-What to expect?
+  What to expect?
   \begin{itemize}
     \item  Also Korean?
-    \item  Would they bother with French, etc.?  Europeans are very good at English these days.
+    \item  Will they bother with French, etc.?
   \end{itemize}
 \end{frame}
 
@@ -255,7 +299,7 @@ What to expect?
 \begin{frame}
   \frametitle{Future Plans}
   \begin{itemize}
-    \item Online fully interactive version?
+    \item Online fully interactive version.
     \item Related research on $L$-series of elliptic curves, etc.
   \end{itemize}
 \end{frame}
