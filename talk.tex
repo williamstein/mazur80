@@ -13,16 +13,21 @@
 \begin{frame}{}
 \vfill
 \begin{center}
+\hrulefill
+\vfill
 \Huge\sc \S#1. #2
+\vfill
+\hrulefill
 \end{center}
 \vfill
 \end{frame}}
 
-\title[Writing a book]{Writing a book with Barry Mazur}
-\subtitle{(on Prime Numbers and the Riemann Hypothesis)}
+\title{Writing a book with Barry Mazur}
+\subtitle{``Prime Numbers and the Riemann Hypothesis''}
 \author[W.\thinspace{}Stein]{William Stein}
 \date[Mazur 80]{June 4, 2018 at Harvard University}
 \institute[SageMath, Inc. \& UW]{SageMath, Inc. and University of Washington}
+
 
 \begin{document}
 
@@ -33,41 +38,63 @@
 \begin{frame}{Abstract}
   \begin{abstract}
     In 2004, Barry Mazur and I started a decade project to write the
-    book ``Prime Numbers and the Riemann Hypothesis'', which we recently
-    published with Cambridge University Press. This 
-    talk is about
-    what's in the book and why, some of the technical aspects
-    of production of the book, and tradeoffs between
-    self publishing online versus with a traditional publisher.
+    book ``Prime Numbers and the Riemann Hypothesis''.
+    This talk is about
+    what's in the book and why, and some aspects
+    of production of the book.
   \end{abstract}
 \end{frame}
+
+\begin{frame}{Prelude: collaborate with great co-authors!}
+
+Writing John Tate's {\em Galois Cohomology} notes for PCMI 1999...
+
+\vfill
+
+\begin{block}{}
+{\em
+``Everybody is so jealous of you getting
+to talk with John Tate!''}\\
+ -- David Savitt
+  \end{block}
+  
+\vfill
+
+If you ever get the chance
+to write something with someone incredible,
+{\bf\em take it!!}
+
+\vfill
+
+(I next wrote a long paper with Ken Ribet from that same PCMI.)
+
+\end{frame}
+
 
 \begin{frame}{Overview}
   \tableofcontents
 \end{frame}
 
-\begin{frame}{The book...}
-  \begin{center}
-    \includegraphics[height=.82\textheight]{pics/the-book.png}
-  \end{center}
-\end{frame}
-
-\mysection{1}{A Public Lecture}
+% todo: add a picture for each section start.
+% this one -- picture of Barry giving a talk (e.g., screen capture from MSRI lecture)
+\mysection{1}{Barry's Public Lecture}
 
 \begin{frame}{Clay Math Institute public lecture (MIT, May 3, 2005)}
+\begin{center}
+  \href{http://www.claymath.org/library/public\_lectures/mazur\_riemann\_hypothesis.pdf}{\small\underline{``Are there still unsolved problems about the numbers 1, 2, 3, 4, ... ?''}}
+\end{center}
 
-  \href{http://www.claymath.org/library/public\_lectures/mazur\_riemann\_hypothesis.pdf}{\underline{Are there still unsolved problems about the numbers 1, 2, 3, 4, ... ?}}
   \vfill
 
-  \begin{block}{``Sell'' number theory to the general public}
+  \begin{block}{Use primes to ``sell'' number theory to the general public}
     \begin{itemize}
       \item   Immediately accessible
       \item   Immediately interesting
       \item   Primes and how eratic they are
       \item   Cicada's every 13, 17 years...
-      \item   Lots of examples that are ``open, interesting questions/issues.''
+      \item   Many examples of ``open, interesting questions''
       \item   People can immediately make computations of their \underline{own}
-      \item   Barry Mazur got his father, who had done NO
+      \item   Barry got his father, who had done NO
             math, hooked on the Goldbach Conjecture, so thought
             primes would work.
     \end{itemize}
@@ -77,28 +104,29 @@
 \begin{frame}{SageMath}
   \vfill
   \begin{center}
-    \includegraphics[width=.7\textwidth]{pics/sage-logo.png}
+    \includegraphics[width=.7\textwidth]{pics/sage-logo}
   \end{center}
   \vfill
 
-  \begin{block}{I started SageMath}
+  \begin{block}{2005: I started SageMath}
     I launched Sage a few months before this 2005 CMI public lecture.
     \begin{itemize}
-      \item Sage is a free Python based open source alternative to Mathematica, Maple, Magma, and Matlab.
-      \item Early Sage development was motivated by this talk
+      \item Sage is a {\bf free open source} alternative to Mathematica, Maple, Magma, and Matlab.
+      \item Early Sage development motivated by this talk
             \begin{itemize}
-              \item Linking Sage to Mathematica to compute $\Gamma$.
-              \item Early plotting functionality.
+              \item Linking Sage to Mathematica to compute $\Gamma$
+              \item Early visualization functionality
+              \item Prime enumeration
             \end{itemize}
     \end{itemize}
   \end{block}
 \end{frame}
 
-\begin{frame}{More about what was in the public lecture...}
-  \begin{block}{The Public Lecture was about}
+\begin{frame}{More about what was in Barry's public lecture...}
+  \begin{block}{Barry's Public Lecture: Topics}
     \begin{itemize}
       \item Primes as atoms (factorization)
-      \item Record large primes (kept changing...)
+      \item Record large primes
       \item Enumerating primes (Sieve of Eratosthenes)
       \item Twin primes
       \item Counting primes
@@ -108,65 +136,188 @@
     \end{itemize}
 
   \end{block}
+  
+  \vfill
+  \begin{center}
+  \Large
+  \emph{It worked!}
+\end{center}
+
 
 
 \end{frame}
 
-\mysection{2}{Write a Book}
+\mysection{2}{Writing a Book}
 
-\begin{frame}{Let's write a book...}
-  \begin{block}{Turn this public lecture into a book?}
+\begin{frame}{``Let's write a book...'' -- Barry}
+  \begin{block}{Could we turn this public lecture into a popular book?}
 
     \begin{itemize}
-      \item Write something for a popular audience.
-      \item Small and readable.
-      \item Full of {\em mathematics}, not stories of people.
-      \item Profusely illustrated.
-      \item Meet for a few weeks and focus on this.
+      \item Write something for a popular audience
+      \item Small and readable
+      \item Full of {\em mathematics}, not stories of people
+      \item Extremely profusely illustrated
+      \item Meet for a few weeks and focus on this
     \end{itemize}
   \end{block}
 \end{frame}
 
-\begin{frame}{The Prime Counting Problem}
+
+\begin{frame}{What kind of book?}
+
+There are already a bunch of books on the Riemann Hypothesis.  Why write another?
+\vfill 
+
+\begin{block}{Our general audience book will be unique}
+  \begin{itemize}
+    \item Motivated by deeply discussing the prime counting problem, and connecting it with our other research project on {\em the explicit formula}.
+    \item Mostly math and not ``stories of people'', since many other books on RH do that already really well.
+  \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{What Sort of Book?  Big? Small?}
+  \begin{center}
+    Like T.\thinspace{}C. MITS or like ON BULLSHIT?
+    \vspace{1ex}
+
+    \includegraphics[height=.75\textheight]{pics/tc-mits}
+    \hspace{2em}
+    \includegraphics[height=.75\textheight]{pics/bullshit}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{Our Approach}
+  \begin{block}{}
+    Go back 150+ years and explain what RH is more from the point of view of real classical Fourier analysis.
+            \begin{itemize}
+              \item We embraced this mid-19th century very $\mathbb{R}$eal perspective.
+              \item We left $\mathbb{C}$omplex numbers to the very, very end.
+            \end{itemize}
+  \end{block}
+  \begin{center}
+    \includegraphics[height=.4\textheight]{pics/riemann}
+  \end{center}
+
+\end{frame}
+
+
+\begin{frame}{Target Audience?}
+
+\begin{block}{Who are we writing this book for?}
+Lovers of number theory who want to read about mathematics (not history).
+
+  \begin{itemize}
+    \item \textbf{High school students?} Tested at \href{https://wstein.org/edu/2007/simuw07/}{SIMUW 2007}.
+    \item \textbf{Retired electrical engineers?}  Tested with original MIT talk, and  online materials we shared.
+  \end{itemize}
+
+\end{block}
+
+\end{frame}
+
+
+\begin{frame}{SageMath again}
+\begin{block}{Computation with Sage drove the exposition}
+  We used Sage to compute with prime numbers, zeros, etc., and generally to plot everything in the book.
+  \begin{itemize}
+    \item The numerous plots are absolutely essential to the exposition, and in fact really drove it!
+    \item Surprising to see so much with such little computation.
+    \item Central observation of the book:
+          \begin{itemize}
+            \item Fourier transform of discrete distribution at primes, gives discrete distribution of zeros of $\zeta$.
+            \item The reverse gets the discrete distribution of prime powers.
+          \end{itemize}
+    \item This is also what got us thinking about ``how explicit is the explicit formula?'' (another research project...)
+  \end{itemize}
+  \end{block}
+\end{frame}
+
+
+\begin{frame}{Collaborative \LaTeX{} via CoCalc}
+  \begin{block}{How we wrote the book}
+    \begin{itemize}
+      \item Using CoCalc's \LaTeX{} editor.
+            \begin{itemize}
+              \item In a web browser...
+              \item Multiple simultaneous editors
+              \item Precise history of all changes
+              \item Gives a sense of the collaborative spirit
+              \item Plug: I just released a new version!
+            \end{itemize}
+      \item Rough PDF's of book on the web at every stage.
+      \item \href{https://github.com/williamstein/rh}{GitHub tracking of changes}
+      \item Sage graphics computations run in same place as editing book.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{CoCalc's Collaborative \LaTeX{} Editor}
+\includegraphics[width=\textwidth]{pics/cocalc-latex}
+\end{frame}
+
+\begin{frame}{}
+\vfill
+\begin{center}
+\hrulefill
+\vfill
+\Huge\sc The Actual Book
+\vfill
+\hrulefill
+\end{center}
+\vfill
+\begin{center}
+(in a few slides)
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Focus on The Prime Counting Problem}
   Let $\pi(x)$ be the number of primes $\leq x$.\\
   Problem: give a ``good approximation'' for $\pi(x)$.
   \vfill
 
-  \includegraphics[width=.98\textwidth]{pics/prime-pi-100.png}
+  \includegraphics[width=.98\textwidth]{pics/prime-pi-100}
 
 \end{frame}
 
-\begin{frame}{The Prime Counting Problem}
+\begin{frame}{Focus on The Prime Counting Problem}
   Let $\pi(x)$ be the number of primes $\leq x$.\\
   Problem: give a ``good approximation'' for $\pi(x)$.
   \vfill
 
-  \includegraphics[width=.98\textwidth]{pics/prime-pi-1000.png}
+  \includegraphics[width=.98\textwidth]{pics/prime-pi-1000}
 
 \end{frame}
 
-\begin{frame}{The Prime Counting Problem}
+\begin{frame}{Focus on The Prime Counting Problem}
   Let $\pi(x)$ be the number of primes $\leq x$.\\
   Problem: give a ``good approximation'' for $\pi(x)$.
   \vfill
 
-  \includegraphics[width=.98\textwidth]{pics/prime-pi-1000000.png}
+  \includegraphics[width=.98\textwidth]{pics/prime-pi-1000000}
 
 \end{frame}
 
-\begin{frame}{Answer: The Riemmann Hypothesis (first formulation)}
+\begin{frame}{Answer: The Riemann Hypothesis (first formulation)}
   \begin{block}{}
     The number of prime numbers less than $X$ is
     approximately $\Li(X)$ and this approximation is essentially square
     root accurate.
   \end{block}
   \begin{center}
-    \includegraphics[width=.5\textwidth]{pics/plot-pi-Li.png}
-    \includegraphics[width=.5\textwidth]{pics/ten24.png}
+    \includegraphics[width=.47\textwidth]{pics/plot-pi-Li}
+    \includegraphics[width=.47\textwidth]{pics/ten24}
   \end{center}
+
+$$
+\pi(X) = \#\{\text{primes } \leq X\} \sim \Li(X) = \int_2^{X} \frac{1}{\log(t)} dt
+$$
+  
 \end{frame}
 
-\begin{frame}{Answer: The Riemmann Hypothesis  (second formulation)}
+\begin{frame}{Answer: The Riemann Hypothesis  (second formulation)}
   \begin{block}{}
     The prime power staircase $\psi(X)$ is essentially square root close
     to the 45 degree straight line.
@@ -179,77 +330,119 @@
   equal to $\log p$.''
 
 \begin{center}
-\includegraphics[height=.4\textheight]{pics/psi.png}
+\includegraphics[height=.4\textheight]{pics/psi}
 \end{center}
 \end{frame}
 
-\begin{frame}{Answer: The Riemmann Hypothesis (third formulation)}
+\begin{frame}{Answer: The Riemann Hypothesis (third formulation)}
   \begin{block}{}
-    Basically, \textit{the explicit formula}: the Fourier transform
-    of the derivative of $\psi(X)$ ``is'' a discrete distribution (supported
-    at the real parts of the zeros of the Riemann Zeta function).
-    Deleted from book, since it was too technical (but didn't renumber!).  Instead, we illustrate the heck out of this, as follows...
+    The Fourier transform
+    of the derivative of $\psi(X)$ \emph{``is basically''} 
+    a discrete distribution supported at the imaginary parts of the 
+    zeros of the Riemann Zeta function.
+    
   \end{block}
+\vfill
 
-  
-\end{frame}
+We deleted this formulation from the book, since it was too technical to state properly (it's the {\em explicit formula}).\footnote{We deleted this formulation from the book, but accidentally didn't relabel the ``fourth formulation", which confused readers.}
 
-\begin{frame}{}
+\vfill
 
-(add formula)
+Instead, we illustrate the heck out of this, as follows...
 
-\includegraphics[height=.42\textheight]{pics/prime-power-freq-5.png}
-
-\end{frame}
-
-
-
-\begin{frame}{}
-
-(add formula)
-
-\includegraphics[height=.41\textheight]{pics/prime-power-freq-20.png}
+\vfill
 
 \end{frame}
 
+\begin{frame}{Fourier transform of $\Psi'(x)$ (first four terms)}
 
-\begin{frame}{}
+    \begin{align*}
+   f(t) =& -{\frac{\log(2)}{2^{1/2}}}\cos(t\log(2))- {\frac{\log(3)}{3^{1/2}}}\cos(t\log(3))\\
+     &\qquad -{\frac{\log(2)}{4^{1/2}}}\cos(t\log(4))-{\frac{\log(5)}{5^{1/2}}}\cos(t\log(5))
+  \end{align*}
 
-(add formula)
+\includegraphics[height=.42\textheight]{pics/prime-power-freq-5}
 
-\includegraphics[height=.43\textheight]{pics/prime-power-freq-500.png}
+\vfill
 
-\end{frame}
-
-
-\begin{frame}{}
-
-(add formula)
-
-\includegraphics[height=.65\textheight]{pics/zeros-series-1000.png}
-
-\end{frame}
-
-\begin{frame}{}
-
-(add formula)
-
-\includegraphics[height=.65\textheight]{pics/R25-approx.png}
-
-\end{frame}
-
-
-\begin{frame}{}
-
-(add formula)
-
-\includegraphics[height=.55\textheight]{pics/Li-R50-pi.png}
+\begin{itemize}
+\item Anybody can easily plot this.  
+\item Arrows point to imaginary parts of zeros of $\zeta(s)$!
+\end{itemize}
 
 \end{frame}
 
 
 
-\begin{frame}{Answer: The Riemmann Hypothesis (fourth formulation)}
+\begin{frame}{Fourier transform of $\Psi'(x)$ (first 20 terms)}
+
+
+\includegraphics[height=.41\textheight]{pics/prime-power-freq-20}
+
+\vfill
+
+$$
+-\sum_{p^n\leq 20}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))
+$$
+
+\end{frame}
+
+
+\begin{frame}{Fourier transform of $\Psi'(x)$ (first 500 terms)}
+
+\includegraphics[height=.43\textheight]{pics/prime-power-freq-500}
+\vfill
+
+$$
+-\sum_{p^n\leq 500}{\frac{\log(p)}{p^{n/2}}}\cos(t\log(p^n))
+$$
+
+{\bf Take this home:}
+{\em The Fourier transform of the derivative of the prime power staircase ``is'' the
+zeros of the Riemann zeta function.}
+
+\end{frame}
+
+
+\begin{frame}{And Fourier transform of the zeros ``is'' prime powers}
+
+
+\begin{center}
+\includegraphics[height=.55\textheight]{pics/zeros-series-1000}
+\end{center}
+
+$$-\sum_{i=1}^{1000}
+   \cos(\log(s)\theta_i)$$
+   
+%$\theta_1 \sim 14.13, \ldots$ are the
+%   first $1000$ contributions to the imaginary parts
+%   of zeros.
+
+\end{frame}
+
+\begin{frame}{Untangle to get $\pi(x)$...}
+
+
+Finish book with manipulation to approximate $\pi(x)$ 
+by a sum of smooth functions involving the $\theta_i$.
+\vfill 
+
+\includegraphics[height=.65\textheight]{pics/R25-approx}
+
+\vfill
+Inspired by Zagier's lecture ``The First 50 million prime numbers''.
+\end{frame}
+
+
+\begin{frame}{$R_{50}$ approximates $\pi(x)$ very well!}
+
+\includegraphics[height=.55\textheight]{pics/Li-R50-pi}
+
+\end{frame}
+
+
+
+\begin{frame}{Answer: The Riemann Hypothesis (fourth formulation)}
   \begin{block}{}
     All the nontrivial zeroes\index{nontrivial zeroes} of $\zeta(s)$ lie on the vertical
     line in the complex plane consisting of the
@@ -258,149 +451,110 @@
 \end{frame}
 
 
-\begin{frame}{What kind of book?}
-  \begin{itemize}
-    \item   Book motivated by the prime counting problem (connect with other project -- explicit formula projects...).
-    \item Mostly math and no ``stories of people'', since many other books on RH do that already.
-    \item Similar problem to guessing rank of an elliptic curve from $a_p$, which we had been thinking about.
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{What Sort of Book?  Big? Small?}
-  \begin{center}
-    Like T.\thinspace{}C. MITS or like ON BULLSHIT?
-    \vspace{1ex}
-
-    \includegraphics[height=.75\textheight]{pics/tc-mits.png}
-    \hspace{2em}
-    \includegraphics[height=.75\textheight]{pics/bullshit.png}
-  \end{center}
-\end{frame}
-
-
-\begin{frame}{Our Approach}
-  \begin{block}{}
-    \begin{itemize}
-      \item Do not emphasize people/history/stories, since that's done already in many other books on RH.
-      \item   Go back 150+ years and explain what RH is more from the point of view of real classical Fourier analysis.
-            \begin{itemize}
-              \item We embraced this mid-19th century real perspective.
-              \item We left complex numbers to the very, very end.
-            \end{itemize}
-    \end{itemize}
-  \end{block}
-  \begin{center}
-    \includegraphics[height=.4\textheight]{pics/riemann}
-  \end{center}
-
-\end{frame}
-
-
-\begin{frame}{Target Audience?}
-
-  Who are we writing this book for? Those who want to read about mathematics (not people and history).
-
-  \begin{itemize}
-    \item \textbf{High school students?} Tested at \href{https://wstein.org/edu/2007/simuw07/}{SIMUW 2007}.
-    \item \textbf{Retired electrical engineers?}  Tested with original MIT talk, and  online materials we shared.
-  \end{itemize}
-
-
-\end{frame}
-
-
-\begin{frame}{SageMath again}
-  Used Sage to compute with prime numbers, zeros, etc., and generally to plot everything in the book.
-  \begin{itemize}
-    \item We drew tons of plots to illustrate everything.
-    \item The plots are absolutely essential to the exposition, and in fact really drove it!
-    \item It is surprising that you see the spikes with such little computation.
-    \item Central observations:
-          \begin{itemize}
-            \item Fourier transform of discrete distribution at primes, gives discrete distribution of zeros of $\zeta$.
-            \item The reverse gets the discrete distribution of prime powers.
-          \end{itemize}
-    \item This what got us thinking about ``how explicit is the explicit formula?'' (another research project...)
-  \end{itemize}
-\end{frame}
-
-
-\begin{frame}{Collaborative \LaTeX{} via CoCalc}
-  \begin{block}{How we wrote the book}
-    \begin{itemize}
-      \item Using CoCalc's \LaTeX{} editor.
-            \begin{itemize}
-              \item Web browser...
-              \item Gives a sense of the collaborative spirit
-              \item Plug: a brand new version of this was just released.
-            \end{itemize}
-      \item We put a rough PDF of book on the web at every stage.
-      \item GitHub: \url{https://github.com/williamstein/rh}
-    \end{itemize}
-  \end{block}
-\end{frame}
-
-
-\mysection{3}{Publish a Book}
+\mysection{3}{Publishing a Book}
 
 \begin{frame}{How to Publish the book:  Self publish!?}
-  \begin{itemize}
-    \item Self publishing: just put it on my website and see what happens.
+\begin{block}{Self publishing?}
+    Just put it on my website and see what happens.
           \begin{itemize}
-            \item Enormous number of people that proof read it.
-            \item Will Hearst pushed us for proper publication.
+            \item May people looked at it...
+            \item But it didn't really get \textbf{significant traction}.
           \end{itemize}
-  \end{itemize}
+          \end{block}
+          \vfill
+Will Hearst convinced us to publish with a commercial publisher.
+Maybe he was tired of printing out copies to give to people. :-)
 \end{frame}
 
 \begin{frame}{Finding a commercial publisher}
+\begin{block}{Finding our publisher...}
   \begin{itemize}
-    \item Finding a publisher
-    \item What expected to give is \LaTeX{}...
+  \item Barry and I have both published a few books with a couple of publishers, over the years.
+    \item Talked to many editors (JMM was very helpful!)
+    \item Looked at reputation, similar books, and who followed up
+    \item Balanced competing goals (e.g., price, quality, rights)
+    \item Kaitlin from Cambridge University Press won for this.
   \end{itemize}
+  \end{block}
 \end{frame}
+%todo: fullname of Kaitlin
 
 
 \begin{frame}{Typos and Mistakes}
+\begin{block}{Or, making the book easier for people to read}
   \begin{itemize}
     \item Dozens of people carefully read drafts of
           the book and provided incredibly useful feedback.
-          \textbf{THANK YOU!}
+          \textbf{THANK YOU!!}
     \item The publisher also had a copy editor read the book,
           and provided complementary feedback.
     \item Don't expect your publisher to catch the sort of
           mistakes a mathematician catches:
           \begin{center}
-            \includegraphics[height=.45\textheight]{pics/gauss.png}
+            \includegraphics[height=.45\textheight]{pics/gauss}
           \end{center}
   \end{itemize}
+  \end{block}
+  % todo: better gauss picture
 \end{frame}
 
 
 \begin{frame}{Creating a Cover}
+
+
+\begin{block}{Ideas for Components Included...}
   \begin{itemize}
-    \item ...
+    \item Plot of Zeta Function (using Sage's {\tt complex\_plot})
+    \item Our names
+    \item Title of book
+    \item Portrait of Riemann, the star of the book!
+    \item Plots illustrating the main ideas of the book
+    \item A "classic" look
   \end{itemize}
+\end{block}
+
+\vfill
+{\Large Natural design tension: publisher vs author}
+
 \end{frame}
 
+\begin{frame}{What we proposed}
+  \begin{center}
+    \includegraphics[height=.82\textheight]{pics/cover-we-wanted}
+  \end{center}
+\end{frame}
+
+\begin{frame}{The Actual Cover}
+% TODO: better quality!
+  \begin{center}
+    \includegraphics[height=.82\textheight]{pics/cover-front}
+  \end{center}
+\end{frame}
 
 \begin{frame}{Endorsements for the back cover}
-  \begin{itemize}
-    \item ...
-  \end{itemize}
+% TODO: better quality!
+Will Hearst and John Cremona kindly wrote about our book...
+
+  \begin{center}
+    \includegraphics[height=.4\textheight]{pics/cover-back}
+  \end{center}
 \end{frame}
 
 \begin{frame}{Production}
+\begin{block}{Producing the book}
   \begin{itemize}
-    \item Cambridge Univ Press might have made some positive steps toward \LaTeX{} (mention Ogus).
-    \item Working with CUP has been a very positive experience overall.
+  \item Initial friction with production, e.g., ``Please provide your Microsoft Word document.''
+    \item Evidently, Cambridge Univ Press might have made some new positive steps toward better \LaTeX{} support.
+    \item Some unfortunate physical issues with the very first printing.
+    \item CUP strongly supported and marketed the book.
+    \item Working with CUP has been a {\em very positive experience} overall.
   \end{itemize}
-
+\end{block}
 \end{frame}
 
 \begin{frame}{Published!}
 
-  \includegraphics[width=.98\textwidth]{pics/amazon-prime.png}
+  \includegraphics[width=.98\textwidth]{pics/amazon-prime}
 
 \end{frame}
 
@@ -408,7 +562,7 @@
 
 \begin{frame}{Reviews by Readers}
 
-  \includegraphics[width=.98\textwidth]{pics/amazon-review.png}
+  \includegraphics[width=.98\textwidth]{pics/amazon-review}
 
   \vfill
 
@@ -418,8 +572,8 @@
 \end{frame}
 
 \begin{frame}{Reception by Readers}
+%todo: put in stuf here
   \begin{itemize}
-    \item Feedback
     \item Sarnak's review in Bulletins
     \item Other reviews
     \item Prizes
@@ -429,10 +583,10 @@
 \begin{frame}{Royalties}
 
   We sold some copies, so Cambridge University Press sent us some money.
-  I bought a puppy named Bella!
+  I'm spending the money on expenses for my dream dog:
 
   \begin{center}
-    \includegraphics[height=.7\textheight]{pics/bella-puppy.png}
+    \includegraphics[height=.7\textheight]{pics/bella-puppy}
   \end{center}
 
 
@@ -462,10 +616,10 @@ will be sold at approximately 2,200 JPY per copy.
 
 
 \begin{frame}
-  \frametitle{Future Plans}
+  \frametitle{Future plans}
   \begin{itemize}
     \item Online fully interactive version.
-    \item Related research on $L$-series of elliptic curves, etc.
+    \item Related research on $L$-series of elliptic curves, etc. There could be a similar book or article about elliptic curves.
   \end{itemize}
 \end{frame}
 
