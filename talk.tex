@@ -3,6 +3,12 @@
 \usetheme{Warsaw}
 \usecolortheme{wolverine}
 \usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\DeclareMathOperator{\Li}{Li}
+
 \title[Prime Numbers]{Prime Numbers and the Riemann Hypothesis}
 \subtitle{(Writing a book with Barry Mazur)}
 \author[W.\thinspace{}Stein]{William Stein}
@@ -33,13 +39,13 @@
   \tableofcontents
 \end{frame}
 
-\begin{frame}{Here's the book...}
+\begin{frame}{The book...}
   \begin{center}
     \includegraphics[height=.82\textheight]{pics/the-book.png}
   \end{center}
 \end{frame}
 
-\section{Give a Public Lecture}
+\section{A Public Lecture}
 
 \begin{frame}{Clay Math Institute public lecture (MIT, May 3, 2005)}
 
@@ -68,17 +74,38 @@
   \end{center}
   \vfill
 
-  I launched Sage a few months before this 2005 CMI public lecture.
-  \begin{itemize}
-    \item Sage is a free open source alternative to Mathematica, Maple, Magma, and Matlab.
-    \item Early Sage development was motivated by this talk
-          \begin{itemize}
-            \item Linking Sage to Mathematica to compute the incomplete Gamma function.
-            \item Early plotting functionality.
-          \end{itemize}
-  \end{itemize}
+  \begin{block}{I started SageMath}
+    I launched Sage a few months before this 2005 CMI public lecture.
+    \begin{itemize}
+      \item Sage is a free open source alternative to Mathematica, Maple, Magma, and Matlab.
+      \item Early Sage development was motivated by this talk
+            \begin{itemize}
+              \item Linking Sage to Mathematica to compute the incomplete Gamma function.
+              \item Early plotting functionality.
+            \end{itemize}
+    \end{itemize}
+  \end{block}
 \end{frame}
 
+\begin{frame}{More about what was in the public lecture...}
+
+\end{frame}
+
+
+\section{Write a Book}
+
+\begin{frame}{Let's write a book...}
+  \begin{block}{Turn this lecture into a book.}
+
+    \begin{itemize}
+      \item Write something for a popular audience.
+      \item Small and readable.
+      \item Full of {\em mathematics}, not stories of people.
+      \item Profusely illustrated.
+      \item Meet for a few weeks each year and focus on this.
+    \end{itemize}
+  \end{block}
+\end{frame}
 
 \begin{frame}{The Prime Counting Problem}
   Let $\pi(x)$ be the number of primes $\leq x$.\\
@@ -91,7 +118,7 @@
 
 \begin{frame}{The Prime Counting Problem}
   Let $\pi(x)$ be the number of primes $\leq x$.\\
-  \textbf{The Problem:} give a ``good approximation'' for $\pi(x)$.
+  Problem: give a ``good approximation'' for $\pi(x)$.
   \vfill
 
   \includegraphics[width=.98\textwidth]{pics/prime-pi-1000.png}
@@ -107,13 +134,57 @@
 
 \end{frame}
 
-\begin{frame}{Answer: RH}
-  The answer, of course, is \textbf{the Riemann Hypothesis}, which is
-  a major open problem in mathematics.
+\begin{frame}{Answer: The Riemmann Hypothesis (first formulation)}
+  \begin{block}{}
+    The number of prime numbers less than $X$ is
+    approximately $\Li(X)$ and this approximation is essentially square
+    root accurate.
+  \end{block}
+  \begin{center}
+    \includegraphics[width=.5\textwidth]{pics/plot-pi-Li.png}
+    \includegraphics[width=.5\textwidth]{pics/ten24.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Answer: The Riemmann Hypothesis  (second formulation)}
+  \begin{block}{}
+    The prime power staircase $\psi(X)$ is essentially square root close
+    to the 45 degree straight line.
+  \end{block}
+
+  $\psi(x)$: Our staircase starts on the ground at $x=0$ and the height of the
+  riser of the step at $x=1$ will be $\log(2\pi)$. The height of the
+  riser of the step at $x=p^n$ will not be $1$
+  but rather: the step at $x=p^n$ will have the height of its riser
+  equal to $\log p$.
+
+
+\end{frame}
+
+\begin{frame}{Answer: The Riemmann Hypothesis (third formulation)}
+  \begin{block}{}
+    Basically, \textit{the explicit formula}: the Fourier transform
+    of the derivative of $\psi(X)$ ``is'' a discrete distribution (supported
+    at the real parts of the zeros of the Riemann Zeta function).
+    We deleted this from book, since it was too technical
+    to precisely state.  .)
+  \end{block}
+
+  (illustrative plot.)
+
+
 \end{frame}
 
 
-\section{Write a Book}
+
+\begin{frame}{Answer: The Riemmann Hypothesis (fourth formulation)}
+  \begin{block}{}
+    All the nontrivial zeroes\index{nontrivial zeroes} of $\zeta(s)$ lie on the vertical
+    line in the complex plane consisting of the
+    complex numbers with real part equal to $1/2$.
+  \end{block}
+\end{frame}
+
 
 \begin{frame}{What kind of book?}
   \begin{itemize}
@@ -136,14 +207,20 @@
 
 
 \begin{frame}{Our Approach}
-  \begin{itemize}
-    \item Do not emphasize people/history/stories, since that's done already in many other books on RH.
-    \item   Go back 150+ years and explain what RH is more from the point of view of real classical Fourier analysis.
-          \begin{itemize}
-            \item We embraced this mid-19th century real perspective.
-            \item We left complex number to the very, very end.
-          \end{itemize}
-  \end{itemize}
+  \begin{block}{}
+    \begin{itemize}
+      \item Do not emphasize people/history/stories, since that's done already in many other books on RH.
+      \item   Go back 150+ years and explain what RH is more from the point of view of real classical Fourier analysis.
+            \begin{itemize}
+              \item We embraced this mid-19th century real perspective.
+              \item We left complex numbers to the very, very end.
+            \end{itemize}
+    \end{itemize}
+  \end{block}
+  \begin{center}
+    \includegraphics[height=.4\textheight]{pics/riemann}
+  \end{center}
+
 \end{frame}
 
 
@@ -177,15 +254,18 @@
 
 
 \begin{frame}{Collaborative \LaTeX{} via CoCalc}
-  \begin{itemize}
-    \item Using CoCalc's \LaTeX{} editor.
-          \begin{itemize}
-            \item Web browser...
-            \item Gives a sense of the collaborative spirit
-          \end{itemize}
-    \item We put our rough PDF on the web at every stage.
-    \item GitHub versions: \url{https://github.com/williamstein/rh}
-  \end{itemize}
+  \begin{block}{}
+    \begin{itemize}
+      \item Using CoCalc's \LaTeX{} editor.
+            \begin{itemize}
+              \item Web browser...
+              \item Gives a sense of the collaborative spirit
+              \item Plug: a brand new version of this was just released.
+            \end{itemize}
+      \item We put a rough PDF of book on the web at every stage.
+      \item GitHub: \url{https://github.com/williamstein/rh}
+    \end{itemize}
+  \end{block}
 \end{frame}
 
 
@@ -211,11 +291,12 @@
 
 \begin{frame}{Typos and Mistakes}
   \begin{itemize}
-    \item Dozens of people ``on the Internet'' carefully read drafts of
-          the book and provided incredibly useful feedback.  \textbf{THANKS!}
+    \item Dozens of people carefully read drafts of
+          the book and provided incredibly useful feedback.
+          \textbf{THANK YOU!}
     \item The publisher also had a copy editor read the book,
-          and provided very different feedback.
-    \item Advice: never expect your publisher to catch the sort of
+          and provided complementary feedback.
+    \item Don't expect your publisher to catch the sort of
           mistakes a mathematician catches:
           \begin{center}
             \includegraphics[height=.45\textheight]{pics/gauss.png}
@@ -224,8 +305,20 @@
 \end{frame}
 
 
-\begin{frame}{Production}
+\begin{frame}{Creating a Cover}
+  \begin{itemize}
+    \item ...
+  \end{itemize}
+\end{frame}
 
+
+\begin{frame}{Endorsements for the back cover}
+  \begin{itemize}
+    \item ...
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Production}
   \begin{itemize}
     \item Cambridge Univ Press might have made some positive steps toward \LaTeX{} (mention Ogus).
     \item Working with CUP has been a very positive experience overall.
@@ -264,7 +357,7 @@
 \begin{frame}{Royalties}
 
   We sold some copies, so Cambridge University Press sent us some money.
-  I bought a puppy (Bella!):
+  I bought a puppy named Bella!
 
   \begin{center}
     \includegraphics[height=.7\textheight]{pics/bella-puppy.png}
