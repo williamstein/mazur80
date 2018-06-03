@@ -9,8 +9,17 @@
 \usepackage{amsthm}
 \DeclareMathOperator{\Li}{Li}
 
-\title[Prime Numbers]{Prime Numbers and the Riemann Hypothesis}
-\subtitle{(Writing a book with Barry Mazur)}
+\newcommand{\mysection}[2]{\section{#2}%
+\begin{frame}{}
+\vfill
+\begin{center}
+\Huge\sc \S#1. #2
+\end{center}
+\vfill
+\end{frame}}
+
+\title[Writing a book]{Writing a book with Barry Mazur}
+\subtitle{(on Prime Numbers and the Riemann Hypothesis)}
 \author[W.\thinspace{}Stein]{William Stein}
 \date[Mazur 80]{June 4, 2018 at Harvard University}
 \institute[SageMath, Inc. \& UW]{SageMath, Inc. and University of Washington}
@@ -23,15 +32,13 @@
 
 \begin{frame}{Abstract}
   \begin{abstract}
-    In 2004, Barry Mazur and I started writing the
+    In 2004, Barry Mazur and I started a decade project to write the
     book ``Prime Numbers and the Riemann Hypothesis'', which we recently
-    published with Cambridge University Press. I'll talk about
-    what's in the book and why, describe some of the technical aspects
-    of production of the book, and tradeoffs for us between
+    published with Cambridge University Press. This 
+    talk is about
+    what's in the book and why, some of the technical aspects
+    of production of the book, and tradeoffs between
     self publishing online versus with a traditional publisher.
-
-    \vspace{.3in}
-    This is talk about talking about the Riemann Hypothesis.
   \end{abstract}
 \end{frame}
 
@@ -45,7 +52,7 @@
   \end{center}
 \end{frame}
 
-\section{A Public Lecture}
+\mysection{1}{A Public Lecture}
 
 \begin{frame}{Clay Math Institute public lecture (MIT, May 3, 2005)}
 
@@ -58,10 +65,10 @@
       \item   Immediately interesting
       \item   Primes and how eratic they are
       \item   Cicada's every 13, 17 years...
-      \item   Lots of examples that are ``opening, interesting questions/issues.''
+      \item   Lots of examples that are ``open, interesting questions/issues.''
       \item   People can immediately make computations of their \underline{own}
-      \item   Barry Mazur got his father who had done NO
-            math hooked on Goldbach Conjecture, so thought
+      \item   Barry Mazur got his father, who had done NO
+            math, hooked on the Goldbach Conjecture, so thought
             primes would work.
     \end{itemize}
   \end{block}
@@ -77,10 +84,10 @@
   \begin{block}{I started SageMath}
     I launched Sage a few months before this 2005 CMI public lecture.
     \begin{itemize}
-      \item Sage is a free open source alternative to Mathematica, Maple, Magma, and Matlab.
+      \item Sage is a free Python based open source alternative to Mathematica, Maple, Magma, and Matlab.
       \item Early Sage development was motivated by this talk
             \begin{itemize}
-              \item Linking Sage to Mathematica to compute the incomplete Gamma function.
+              \item Linking Sage to Mathematica to compute $\Gamma$.
               \item Early plotting functionality.
             \end{itemize}
     \end{itemize}
@@ -88,15 +95,15 @@
 \end{frame}
 
 \begin{frame}{More about what was in the public lecture...}
-  \begin{block}{Public lecture}
+  \begin{block}{The Public Lecture was about}
     \begin{itemize}
       \item Primes as atoms (factorization)
       \item Record large primes (kept changing...)
-      \item Sieve of Eratosthenes
+      \item Enumerating primes (Sieve of Eratosthenes)
       \item Twin primes
       \item Counting primes
-      \item Gauss's Conjecture: Prime Number Theorem
-      \item Riemann: Fourier Adjustments to get $\pi(x)$
+      \item Gauss's Conjecture -- Prime Number Theorem
+      \item Riemann: Fourier Adjustments to get smooth approx to $\pi(x)$
       \item Riemann Harmonics (zeros of $\zeta(s)$)
     \end{itemize}
 
@@ -105,11 +112,10 @@
 
 \end{frame}
 
-
-\section{Write a Book}
+\mysection{2}{Write a Book}
 
 \begin{frame}{Let's write a book...}
-  \begin{block}{Turn this lecture and notes into a book.}
+  \begin{block}{Turn this public lecture into a book?}
 
     \begin{itemize}
       \item Write something for a popular audience.
@@ -166,13 +172,15 @@
     to the 45 degree straight line.
   \end{block}
 
-  $\psi(x)$: Our staircase starts on the ground at $x=0$ and the height of the
+  $\psi(x)$: ``Our staircase starts on the ground at $x=0$ and the height of the
   riser of the step at $x=1$ will be $\log(2\pi)$. The height of the
   riser of the step at $x=p^n$ will not be $1$
   but rather: the step at $x=p^n$ will have the height of its riser
-  equal to $\log p$.
+  equal to $\log p$.''
 
-
+\begin{center}
+\includegraphics[height=.4\textheight]{pics/psi.png}
+\end{center}
 \end{frame}
 
 \begin{frame}{Answer: The Riemmann Hypothesis (third formulation)}
@@ -180,12 +188,62 @@
     Basically, \textit{the explicit formula}: the Fourier transform
     of the derivative of $\psi(X)$ ``is'' a discrete distribution (supported
     at the real parts of the zeros of the Riemann Zeta function).
-    We deleted this from book, since it was too technical
-    to precisely state precisely.
+    Deleted from book, since it was too technical (but didn't renumber!).  Instead, we illustrate the heck out of this, as follows...
   \end{block}
 
-  (illustrative plot.)
+  
+\end{frame}
 
+\begin{frame}{}
+
+(add formula)
+
+\includegraphics[height=.42\textheight]{pics/prime-power-freq-5.png}
+
+\end{frame}
+
+
+
+\begin{frame}{}
+
+(add formula)
+
+\includegraphics[height=.41\textheight]{pics/prime-power-freq-20.png}
+
+\end{frame}
+
+
+\begin{frame}{}
+
+(add formula)
+
+\includegraphics[height=.43\textheight]{pics/prime-power-freq-500.png}
+
+\end{frame}
+
+
+\begin{frame}{}
+
+(add formula)
+
+\includegraphics[height=.65\textheight]{pics/zeros-series-1000.png}
+
+\end{frame}
+
+\begin{frame}{}
+
+(add formula)
+
+\includegraphics[height=.65\textheight]{pics/R25-approx.png}
+
+\end{frame}
+
+
+\begin{frame}{}
+
+(add formula)
+
+\includegraphics[height=.55\textheight]{pics/Li-R50-pi.png}
 
 \end{frame}
 
@@ -283,7 +341,7 @@
 \end{frame}
 
 
-\section{Publish a Book}
+\mysection{3}{Publish a Book}
 
 \begin{frame}{How to Publish the book:  Self publish!?}
   \begin{itemize}
