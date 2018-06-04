@@ -1,10 +1,10 @@
 ︠d8a7d67a-bcc9-4b45-9fa4-0334246b78d9s︠
 plot(prime_pi, 0, 100, color='red', figsize=[8,4])
-︡052a923b-b80e-4393-ace1-2c4f0c862758︡{"file":{"filename":"/home/user/.sage/temp/project-6cd832d3-c523-41e3-9e54-c8f2d2e8fa2a/31201/tmp_PJpkhY.svg","show":true,"text":null,"uuid":"02ff79ae-efd1-48aa-a93f-e0363e7576a6"},"once":false}︡{"done":true}︡
+︡49da5df8-4d18-401e-bc44-5e2a746a0790︡{"file":{"filename":"/projects/fbe420b1-b274-49b3-9748-e58d436af6e2/.sage/temp/fb6df240ceb5/2445/tmp_HEO4Fe.svg","show":true,"text":null,"uuid":"fc481624-018d-4b96-8c17-264e7b819ea3"},"once":false}︡{"done":true}︡
 ︠7db23149-9582-4a5e-89ba-c96107c5fd88s︠
 plot(prime_pi, 0, 1000, color='red', figsize=[8,4])
-︡68cf1a68-e67f-4a13-ab4d-56a35cfd9e7b︡{"file":{"filename":"/home/user/.sage/temp/project-6cd832d3-c523-41e3-9e54-c8f2d2e8fa2a/31432/tmp_TYb4W1.svg","show":true,"text":null,"uuid":"54b3e078-5cdd-4d7b-a367-4f6bc67ee4cc"},"once":false}︡{"done":true}︡
+︡58c26ad6-9c31-41ff-8909-69aa21b2993c︡{"file":{"filename":"/projects/fbe420b1-b274-49b3-9748-e58d436af6e2/.sage/temp/fb6df240ceb5/2445/tmp_oBUgPN.svg","show":true,"text":null,"uuid":"0c593246-10f9-489e-a520-be3d5a8ffb5e"},"once":false}︡{"done":true}︡
 ︠1d0fb02f-49cc-457c-911f-f3559fe60bf3s︠
 plot(prime_pi, 0, 10^6, color='red', figsize=[8,4])
-︡1754e292-d6bb-4cd3-97a7-9c820bc2dd88︡{"file":{"filename":"/home/user/.sage/temp/project-6cd832d3-c523-41e3-9e54-c8f2d2e8fa2a/31432/tmp_8Nb22I.svg","show":true,"text":null,"uuid":"78c73eb3-3614-4475-81c5-8ddbdb60fbae"},"once":false}︡{"done":true}︡
+︡0f3597be-8290-4a2f-8ede-e4f0c4e5ab27︡{"file":{"filename":"/projects/fbe420b1-b274-49b3-9748-e58d436af6e2/.sage/temp/fb6df240ceb5/2445/tmp_b0RhqL.svg","show":true,"text":null,"uuid":"fc4703d7-21ae-40fe-aa76-4564b8208954"},"once":false}︡{"done":true}︡
 ︠c742901a-4558-489e-8b0f-c7b856a8bfc0︠

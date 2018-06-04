@@ -41,9 +41,15 @@
     In 2005, Barry Mazur and I started a decade+ project to write the
     book ``Prime Numbers and the Riemann Hypothesis''.
     This talk is about
-    what's in the book and why, and some aspects
-    of production of the book.
+    what's in the book and why, and how the book was produced.
   \end{abstract}
+  
+  \vfill
+  \hrulefill
+  
+  {\tiny Thank you to Barry and the organizers!}\\
+    {\tiny Encourage people to rudely interrupt me during my talk and ask questions!}
+
 \end{frame}
 
 \begin{frame}{Prelude: collaborate with great co-authors!}
@@ -215,7 +221,7 @@
   \begin{block}{Who are we writing this book for?}
     \vspace{.25in}
 
-    {\em Lovers of number theory}, who want to read about mathematics.
+    {\em Lovers of number theory} who want to read about mathematics.
     \vspace{.25in}
 
     \begin{itemize}
@@ -261,8 +267,12 @@
   \end{block}
 \end{frame}
 
-\begin{frame}{Screenshot of CoCalc's Collaborative \LaTeX{} Editor}
+\begin{frame}{CoCalc's Collaborative \LaTeX{} Editor}
   \includegraphics[width=\textwidth]{pics/cocalc-latex}
+\end{frame}
+
+\begin{frame}{CoCalc's Collaborative \LaTeX{} Editor and Sage Worksheet}
+  \includegraphics[width=\textwidth]{pics/cocalc-latex-2}
 \end{frame}
 
 \begin{frame}{}
@@ -309,11 +319,12 @@
 \end{frame}
 
 \begin{frame}{Answer: The Riemann Hypothesis (first formulation)}
-  \begin{block}{}
-    The number of prime numbers less than $X$ is
-    approximately $\Li(X)$ and this approximation is essentially square
-    root accurate.
-  \end{block}
+  $$
+  \Li(X) = \int_2^{X} \frac{1}{\log(t)} dt
+  \text{ is good approx to }
+  \pi(X) = \#\{\text{primes} \leq X\}
+  $$
+
 \begin{flushright}
   \tiny For $X=10^{24}$:
 \end{flushright}
@@ -322,11 +333,14 @@
 \includegraphics[width=.47\textwidth]{pics/ten24}
   \end{center}
 
-  $$
-  \Li(X) = \int_2^{X} \frac{1}{\log(t)} dt
-  \text{ is good approx to }
-  \pi(X) = \#\{\text{primes} \leq X\}
-  $$
+
+  \begin{block}{}
+    \textbf{RH1:} The number of prime numbers less than $X$ is
+    approximately $\Li(X)$ and this approximation is essentially square
+    root accurate.
+  \end{block}
+
+\hrulefill
 
 {\tiny Gauss wrote in his 1849 letter  that
 there are $216{,}745$ prime numbers less than three million.\vspace{-1em}\\
@@ -348,29 +362,29 @@ wrong: the actual number of these primes is $216{,}816$.}
   \end{center}
 
   \begin{block}{}
-    RH (second formulation): The prime power staircase $\psi(X)$ is essentially square root close
+    \textbf{RH2:} The prime power staircase $\psi(X)$ is essentially square root close
     to the 45 degree straight line.
   \end{block}
 
 \end{frame}
 
 \begin{frame}{Answer: The Riemann Hypothesis (third formulation)}
-  \begin{block}{}
-    The Fourier transform
-    of $\psi'(X)$ \emph{``is basically''}
-    a discrete distribution supported at the imaginary parts of the
-    (nontrivial) zeros of $\zeta(s)$.
 
-  \end{block}
-  \vfill
-
-  We deleted this formulation from the book, since it was too technical to state properly (it's the {\em explicit formula}).\footnote{After deleting this, we accidentally didn't relabel the ``fourth formulation", which confused readers.}
+  We deleted this formulation from the book, since it was too technical to state properly (it's the {\em explicit formula}). After deleting this, we accidentally didn't relabel the ``fourth formulation", which confused readers.
 
   \vfill
 
   Instead, we illustrate the heck out of it!
 
   \vfill
+
+    \begin{block}{}
+    \textbf{RH3:} The Fourier transform
+    of $\psi'(X)$ \emph{``is basically''}
+    a discrete distribution supported at the imaginary parts of the
+    (nontrivial) zeros of $\zeta(s)$.
+
+  \end{block}
 
 \end{frame}
 
@@ -463,11 +477,13 @@ wrong: the actual number of these primes is $216{,}816$.}
 
 
 \begin{frame}{Answer: The Riemann Hypothesis (fourth formulation)}
+\vfill
   \begin{block}{}
-    All the nontrivial zeroes\index{nontrivial zeroes} of $\zeta(s)$ lie on the vertical
+    \textbf{RH4:} All the nontrivial zeroes\index{nontrivial zeroes} of $\zeta(s)$ lie on the vertical
     line in the complex plane consisting of the
     complex numbers with real part equal to $1/2$.
   \end{block}
+  \vfill
 \end{frame}
 
 
@@ -622,7 +638,7 @@ all this information into an exposition of the underlying mathematics.''
   \frametitle{Translations}
   \begin{verbatim}
 25 Apr 2018
- 
+
 Dear Professor Stein,
 
 Prime Numbers and the Riemann Hypothesis
@@ -647,7 +663,7 @@ will be sold at approximately 2,200 JPY per copy.
     \end{itemize}
   \end{block}
   \vfill
-  
+
   \begin{center}
 Thank You!
 \end{center}
