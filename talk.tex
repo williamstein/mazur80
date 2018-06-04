@@ -38,7 +38,7 @@
 
 \begin{frame}{Abstract}
   \begin{abstract}
-    In 2004, Barry Mazur and I started a decade project to write the
+    In 2005, Barry Mazur and I started a decade+ project to write the
     book ``Prime Numbers and the Riemann Hypothesis''.
     This talk is about
     what's in the book and why, and some aspects
@@ -97,7 +97,7 @@
     \begin{itemize}
       \item   Immediately accessible
       \item   Immediately interesting
-      \item   Primes and how eratic they are
+      \item   How eratic primese are
       \item   Cicada's every 13, 17 years...
       \item   Many examples of ``open, interesting questions''
       \item   People can immediately make computations of their \underline{own}
@@ -115,7 +115,7 @@
   \end{center}
   \vfill
 
-  \begin{block}{2005: I started SageMath}
+  \begin{block}{I also launched SageMath in 2005}
     I launched Sage a few months before this 2005 CMI public lecture.
     \begin{itemize}
       \item Sage is a {\bf free open source} alternative to Mathematica, Maple, Magma, and Matlab.
@@ -123,16 +123,16 @@
             \begin{itemize}
               \item Linking Sage to Mathematica to compute $\Gamma$
               \item Early visualization functionality
-              \item Prime enumeration
+              \item Prime enumeration (via PARI)
             \end{itemize}
     \end{itemize}
   \end{block}
 \end{frame}
 
 \begin{frame}{More about what was in Barry's public lecture...}
-  \begin{block}{Barry's Public Lecture: Topics}
+  \begin{block}{Topics}
     \begin{itemize}
-      \item Primes as atoms: factorization
+      \item Primes as atoms: integer factorization
       \item The largest known prime
       \item Enumerating primes: Sieve of Eratosthenes
       \item Twin primes
@@ -157,10 +157,10 @@
 \mysection{2}{Writing a Book}
 
 \begin{frame}{``Let's write a book...'' -- Barry}
-  \begin{block}{Could we turn this public lecture into a popular book?}
+  \begin{block}{Could we turn this public lecture into a ``popular book''?}
 
     \begin{itemize}
-      \item Write something for a popular audience
+      \item Write something for a general audience
       \item Small and readable
       \item Full of {\em mathematics}, not stories of people
       \item Profusely illustrated
@@ -175,10 +175,10 @@
   There are already 4 recent popular books on the Riemann Hypothesis.  Why write another?
   \vfill
 
-  \begin{block}{Our general audience book could be unique}
+  \begin{block}{Our book could be unique}
     \begin{itemize}
-      \item Motivated by deeply discussing the prime counting problem, and connecting it with our other research project on {\em the explicit formula}.
-      \item Mostly math and not ``stories of people'' (other books on RH already do the stories well).
+      \item Motivate by connecting the prime counting problem with our other research on {\em the explicit formula}
+      \item Mostly math and not ``stories of people'' (other books on RH already do the stories well)
     \end{itemize}
   \end{block}
 \end{frame}
@@ -197,7 +197,7 @@
 
 \begin{frame}{Our Approach}
   \begin{block}{}
-    Go back 150+ years and explain what RH is more from the point of view of real classical Fourier analysis.
+    Go back 150+ years and explain what RH is more from the point of view of  classical Fourier analysis.
     \begin{itemize}
       \item Embrace a mid-19th century very $\mathbb{R}$eal perspective
       \item Leave $\mathbb{C}$omplex numbers to the very, very end
@@ -219,8 +219,8 @@
     \vspace{.25in}
 
     \begin{itemize}
-      \item \textbf{High school students?\footnote{Neither Barry nor I  graduated from high school...}} Tested at \href{https://wstein.org/edu/2007/simuw07/}{SIMUW 2007}.
-      \item \textbf{Retired electrical engineers?}  Tested with original MIT talk, and  online materials we shared.
+      \item Bright high school students?\footnote{Neither Barry nor I  graduated from high school.}
+      \item Retired electrical engineers?
     \end{itemize}
     \vspace{.5in}
 
@@ -246,18 +246,17 @@
 \begin{frame}{Collaborative \LaTeX{} via CoCalc}
   \begin{block}{How we wrote the book}
     \begin{itemize}
-      \item Using CoCalc's \LaTeX{} editor.
+      \item I wrote  CoCalc's \LaTeX{} editor {\bf for this book project}:
             \begin{itemize}
-              \item In a web browser...
-              \item Both of us simultaneously editing the same file.
+              \item In a web browser
+              \item Both of us simultaneously editing the same file
               \item Precise history of all changes
               \item Gives a sense of the collaborative spirit
-              \item Plug: I just released a new version of the editor!
             \end{itemize}
-      \item Rough PDF's of book on the web at every stage.
+      \item Rough PDF of book on the web at every stage
       \item \href{https://github.com/williamstein/rh}{GitHub tracking of changes}
-      \item Sage computations run in the same place as editing book.
-      \item Barry did very closely read and understand all the Sage code!
+      \item Sage computations run in the same place as editing book
+      \item Barry very closely read and understood the Sage code
     \end{itemize}
   \end{block}
 \end{frame}
@@ -315,24 +314,30 @@
     approximately $\Li(X)$ and this approximation is essentially square
     root accurate.
   \end{block}
-  \begin{center}
-    \includegraphics[width=.47\textwidth]{pics/plot-pi-Li}
-    \includegraphics[width=.47\textwidth]{pics/ten24}
+\begin{flushright}
+  \tiny For $X=10^{24}$:
+\end{flushright}
+
+  \begin{center}    \includegraphics[width=.47\textwidth]{pics/plot-pi-Li}
+\includegraphics[width=.47\textwidth]{pics/ten24}
   \end{center}
 
   $$
-  \pi(X) = \#\{\text{primes } \leq X\} \sim \Li(X) = \int_2^{X} \frac{1}{\log(t)} dt
+  \Li(X) = \int_2^{X} \frac{1}{\log(t)} dt
+  \text{ is good approx to }
+  \pi(X) = \#\{\text{primes} \leq X\}
   $$
 
+{\tiny Gauss wrote in his 1849 letter  that
+there are $216{,}745$ prime numbers less than three million.\vspace{-1em}\\
+
+This is
+wrong: the actual number of these primes is $216{,}816$.}
 \end{frame}
 
 \begin{frame}{Answer: The Riemann Hypothesis  (second formulation)}
-  \begin{block}{}
-    The prime power staircase $\psi(X)$ is essentially square root close
-    to the 45 degree straight line.
-  \end{block}
 
-  $\psi(x)$: ``Our staircase starts on the ground at $x=0$ and the height of the
+  $\psi(x)$: ``A new staircase that starts on the ground at $x=0$ and the height of the
   riser of the step at $x=1$ will be $\log(2\pi)$. The height of the
   riser of the step at $x=p^n$ will not be $1$
   but rather: the step at $x=p^n$ will have the height of its riser
@@ -341,14 +346,20 @@
   \begin{center}
     \includegraphics[height=.4\textheight]{pics/psi}
   \end{center}
+
+  \begin{block}{}
+    RH (second formulation): The prime power staircase $\psi(X)$ is essentially square root close
+    to the 45 degree straight line.
+  \end{block}
+
 \end{frame}
 
 \begin{frame}{Answer: The Riemann Hypothesis (third formulation)}
   \begin{block}{}
     The Fourier transform
-    of the derivative of $\psi(X)$ \emph{``is basically''}
+    of $\psi'(X)$ \emph{``is basically''}
     a discrete distribution supported at the imaginary parts of the
-    zeros of the Riemann Zeta function.
+    (nontrivial) zeros of $\zeta(s)$.
 
   \end{block}
   \vfill
@@ -489,7 +500,7 @@
       \item Talked to many editors (the JMM was \textbf{very} helpful!)
       \item Looked at reputation, similar books, and who followed up
       \item Balanced competing goals (e.g., price, quality, rights)
-      \item Kaitlin Leach from Cambridge University Press won for this.
+      \item Kaitlin Leach from Cambridge University Press won.
     \end{itemize}
   \end{block}
 \end{frame}
@@ -503,7 +514,7 @@
       \item The publisher had a copy editor read the book,
             and provided complementary feedback.
       \item Don't expect your publisher to catch the sort of
-            mistakes a mathematician catches:
+            mistakes a mathematician would catch (should be 1777--1855):
             \begin{center}
               \includegraphics[height=.38\textheight]{pics/gauss}
             \end{center}
@@ -554,9 +565,8 @@
 \begin{frame}{Production}
   \begin{block}{Producing the book}
     \begin{itemize}
-      \item Initial friction with production, e.g., ``Please provide Microsoft Word document.''
-      \item Evidently, Cambridge Univ Press might have made some new positive steps toward better \LaTeX{} support.
-      \item Some unfortunate physical issues with the very first printing.
+      \item Initial friction with production, e.g., ``Please provide Microsoft Word document.'' (Cambridge Univ Press has made many positive steps toward better \LaTeX{} support.)
+      \item An unfortunate physical issue with some of the first printing.
       \item CUP strongly supported and marketed the book.
       \item Working with CUP has been a {\em very positive experience} overall.
     \end{itemize}
@@ -573,26 +583,26 @@
 
 \begin{frame}{User Reviews}
 
-  \includegraphics[width=.95\textwidth]{pics/amazon-review}
+  \includegraphics[width=\textwidth]{pics/amazon-review}
 
   \hrulefill
 
   \vfill
 
-  Negative reviews  mainly due to \textit{production issues},
-  both with the physical book
-  and the Kindle edition, which CUP fully addressed.
+  %Negative reviews  mainly due to \textit{production issues},
+  %both with the physical book
+  %and the Kindle edition, which CUP fully addressed.
 
 \end{frame}
 
 \begin{frame}{Magazine \& Blog Reviews}
   \begin{itemize}
-    \item \href{http://www.ams.org/journals/bull/2018-55-03/S0273-0979-2018-01624-8/}{Sarnak review in Bulletins}: ``[the authors] make effective use of such technology and do a marvelous job of integrating
+    \item \href{http://www.ams.org/journals/bull/2018-55-03/S0273-0979-2018-01624-8/}{Sarnak review in Bulletins}: ``make effective use of such technology and do a marvelous job of integrating
 all this information into an exposition of the underlying mathematics.''
-    \item \href{https://www.tandfonline.com/doi/abs/10.1080/00029890.2018.1438005}{Avner Ash in American Math Monthly}: ?? (paywall)
-    \item \href{https://mathbabe.org/2016/05/03/prime-numbers-and-the-riemann-hypothesis/}{Cathy O'Neil}: ``If I have one complaint it's all the pictures of white male mathematicians. [...] it would have been even better if it focused on the ideas more and the people less.''
+    \item \href{https://www.tandfonline.com/doi/abs/10.1080/00029890.2018.1438005}{Avner Ash in American Math Monthly}
     \item \href{https://www.maa.org/press/maa-reviews/prime-numbers-and-the-riemann-hypothesis}{MAA review}: ``This book is a splendid piece of work, informative and valuable.''
     \item \href{https://golem.ph.utexas.edu/category/2016/03/prime_numbers_and_the_riemann.html}{John Baez}: ``It's the best elementary introduction to the connection between prime numbers and zeros of the Riemann zeta function.''
+    \item \href{https://mathbabe.org/2016/05/03/prime-numbers-and-the-riemann-hypothesis/}{Cathy O'Neil}: ``If I have one complaint it's all the pictures of white male mathematicians. [...] it would have been even better if it focused on the ideas more and the people less.''
   \end{itemize}
 \end{frame}
 
@@ -611,6 +621,8 @@ all this information into an exposition of the underlying mathematics.''
 \begin{frame}[fragile]
   \frametitle{Translations}
   \begin{verbatim}
+25 Apr 2018
+ 
 Dear Professor Stein,
 
 Prime Numbers and the Riemann Hypothesis
@@ -621,12 +633,6 @@ a Japanese language edition of your book. They plan
 to print an edition of 2,500 copies initially, which
 will be sold at approximately 2,200 JPY per copy.
   \end{verbatim}
-
-  What to expect?
-  \begin{itemize}
-    \item  Also Korean?
-    \item  Will they bother with French, etc.?
-  \end{itemize}
 \end{frame}
 
 
@@ -640,6 +646,12 @@ will be sold at approximately 2,200 JPY per copy.
             behavior of the $a_p$.
     \end{itemize}
   \end{block}
+  \vfill
+  
+  \begin{center}
+Thank You!
+\end{center}
+
 \end{frame}
 
 
